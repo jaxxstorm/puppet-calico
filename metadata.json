@@ -1,0 +1,54 @@
+{
+  "name": "jaxxstorm-calico",
+  "version": "0.1.1",
+  "author": "jaxxstorm",
+  "summary": "Install and manage calico-felix on your system",
+  "license": "MIT",
+  "source": "https://github.com/jaxxstorm/puppet-calico",
+  "project_page": "https://github.com/jaxxstorm/puppet-calico",
+  "issues_url": "https://github.com/jaxxstorm/puppet-calico/issues",
+  "tags": [
+    "kubernetes",
+    "docker",
+    "network",
+    "calico",
+    "mesos"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=3.3.0 <5.0.0"
+    },
+    {
+      "name": "pe",
+      "version_requirement": ">=3.7.0 < 2015.3.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.2.0 <5.0.0"
+    }
+  ]
+}

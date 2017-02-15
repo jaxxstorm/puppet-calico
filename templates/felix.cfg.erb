@@ -1,0 +1,13 @@
+[global]
+EtcdEndpoints = "<%= scope['calico::etcd_endpoints'].join(",") %>"
+FelixHostname = "<%= scope['calico::calico_hostname'] %>"
+<% if scope['calico::etcd_keyfile'] -%>
+EtcdKeyFile = "<%= scope['calico::etcd_keyfile'] %>"
+<% end -%>
+<% if scope['calico::etcd_certfile'] -%>
+EtcdCertFile = "<%= scope['calico::etcd_certfile'] %>"
+<% end -%>
+<% if scope['calico::etcd_cafile'] -%>
+EtcdCAFile = "<%= scope['calico::etcd_cafile'] %>"
+<% end -%>
+
