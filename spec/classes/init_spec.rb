@@ -31,7 +31,7 @@ describe 'calico', :type => :class do
   end
 
   context "should ensure config_file exist" do
-    it { should contain_file('/etc/calico/felix.cfg').with(:ensure => 'file') }
+    it { should contain_file('/etc/calico/felix.cfg').with(:ensure => 'file').that_notifies('Service[calico-felix]') }
   end
 
   context "config_etcd_endpoints" do

@@ -8,6 +8,7 @@ class calico::configure {
   file { "${calico::config_dir}/${calico::config_file}" :
     ensure  => file,
     content => template('calico/felix.cfg.erb'),
+    notify  => Service[$calico::service_name],
   }
 
 }
