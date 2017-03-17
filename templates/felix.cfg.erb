@@ -10,4 +10,6 @@ EtcdCertFile = "<%= scope['calico::etcd_certfile'] %>"
 <% if scope['calico::etcd_cafile'] -%>
 EtcdCAFile = "<%= scope['calico::etcd_cafile'] %>"
 <% end -%>
-
+<% if scope['calico::chain_insertmode'] -%>
+ChainInsertMode = "<%= scope['calico::chain_insertmode'] %>"
+<% end -%>
