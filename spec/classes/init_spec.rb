@@ -48,6 +48,10 @@ describe 'calico', :type => :class do
     it { should contain_file('/etc/calico/felix.cfg').with_content(/EtcdKeyFile = \"\/path\/to\/file.key\"\nEtcdCertFile = \"\/path\/to\/file.pem\"\n/) }
   end
 
+  context "config_chain_insertmode" do
+    let(:params) {{ 'chain_insertmode' => 'insert' }}
+    it { should contain_file('/etc/calico/felix.cfg').with_content(/ChainInsertMode = \"insert\"/) }
+  end
 
 
 end

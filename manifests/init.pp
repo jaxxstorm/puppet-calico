@@ -15,6 +15,7 @@
 # @param [String] etcd_keyfile path to a keyfile for etcd connectivity
 # @param [String] etcd_certfile path to a cert file for etcd connectivity
 # @param [String] etcd_cafile path to a ca file for etcd connectivity
+# @param [String] chain_insertmode iptables rule insert mode
 class calico (
   $package_name     = $calico::params::package_name,
   $package_ensure   = 'installed',
@@ -28,7 +29,8 @@ class calico (
   $etcd_endpoints   = ['http://localhost:2379'],
   $etcd_keyfile     = undef,
   $etcd_certfile    = undef,
-  $etcd_cafile      = undef
+  $etcd_cafile      = undef,
+  $chain_insertmode = undef,
 ) inherits calico::params {
 
   class  { 'calico::install': } ->

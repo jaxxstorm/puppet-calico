@@ -125,4 +125,8 @@ Specifies the path to a certfile when connecting to etcd over SSL (default: `und
 
 Specifies the path to a cafile when connecting to etcd over SSL (default: `undef`)
 
+##### `chain_insertmode` [String]
+
+Specify whether to insert or append rules to the iptables chains (insert,append - default: `undef`)
+
 ## Limitations
