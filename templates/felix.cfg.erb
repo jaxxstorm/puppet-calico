@@ -13,3 +13,6 @@ EtcdCAFile = "<%= scope['calico::etcd_cafile'] %>"
 <% if scope['calico::chain_insertmode'] -%>
 ChainInsertMode = "<%= scope['calico::chain_insertmode'] %>"
 <% end -%>
+<% if scope['calico::ipv6_support'] -%>
+Ipv6Support = <%= scope['calico::ipv6_support'] %>
+<% end -%>

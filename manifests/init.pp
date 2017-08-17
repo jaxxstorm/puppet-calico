@@ -25,16 +25,20 @@ class calico (
   $config_dir       = $calico::params::config_dir,
   $config_file      = $calico::params::config_file,
   # config options
-  $calico_hostname  = "${::fqdn}",
+  $calico_hostname  = $::fqdn,
   $etcd_endpoints   = ['http://localhost:2379'],
   $etcd_keyfile     = undef,
   $etcd_certfile    = undef,
   $etcd_cafile      = undef,
   $chain_insertmode = undef,
+  $ipv6_support     = undef,
 ) inherits calico::params {
 
   class  { 'calico::install': } ->
-  class  { 'calico::configure': } ->
+  class  { 'calico::configure': } ~>
   class  { 'calico::service': }
 
+  contain 'calico::install'
+  contain 'calico::configure'
+  contain 'calico::service'
 }
